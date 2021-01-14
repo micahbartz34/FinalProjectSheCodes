@@ -1,0 +1,65 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background-image: linear-gradient(120deg, #a6c0fe 0%, #f68084 100%);
+}
+.container {
+  font-family: "Roboto Condensed", sans-serif;
+}
+.col {
+  text-align: center;
+  max-width: 500px;
+  padding: 0px 0px 0px 80px;
+  font-size: 75px;
+  text-align: top;
+}
+.temperature,
+.units,
+p,
+.col-7,
+h1 {
+  color: white;
+}
+.temperature {
+  font-size: 90px;
+}
+.units {
+  font-size: 20px;
+  vertical-align: text-top;
+}
+h1 {
+  font-size: 36px;
+  margin-top: -20px;
+  margin-bottom: 50px;
+}
+p {
+  margin-bottom: 30px;
+  font-size: 14px;
+  line-height: 25px;
+}
+form {
+  display: block;
+  margin: 0px auto;
+}
+.col-7 {
+  text-align: right;
+  font-size: 40px;
+  padding: 80px 0px;
+  line-height: 98px;
+}
+.btn {
+  margin-top: -70px;
+  background: white;
+  border: none;
+  color: #c6a8ce;
+  transition: ease-in-out;
+}
+
+.btn:hover {
+  border: solid white;
+  background: transparent;
+  color: white;
+}
