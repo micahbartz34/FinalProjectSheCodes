@@ -20,7 +20,9 @@ body {
 .units,
 p,
 .col-7,
-h1 {
+h1,
+.source,
+a {
   color: white;
 }
 .temperature {
@@ -62,4 +64,9 @@ form {
   border: solid white;
   background: transparent;
   color: white;
+}
+
+.source,
+a {
+  font-size: 11px;
 }
