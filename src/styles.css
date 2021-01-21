@@ -61,3 +61,7 @@ form {
   background: transparent;
   color: white;
 }
+
+a {
+  font-size: 11px;
+}
