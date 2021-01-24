@@ -41,7 +41,8 @@ p {
 }
 form,
 form:active,
-form:visited {
+form:visited,
+form:focus {
   display: block;
   margin: 0px auto;
   box-shadow: none;
@@ -54,7 +55,8 @@ form:visited {
 }
 .btn,
 .btn:visited,
-.btn:active {
+.btn:active,
+.btn:focus {
   background: white;
   border: none;
   color: #c6a8ce;
