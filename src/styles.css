@@ -39,9 +39,12 @@ p {
   font-size: 13px;
   line-height: 25px;
 }
-form {
+form,
+form:active,
+form:visited {
   display: block;
   margin: 0px auto;
+  box-shadow: none;
 }
 .col-7 {
   text-align: right;
@@ -51,12 +54,12 @@ form {
 }
 .btn,
 .btn:visited,
-.btn:active,
-.btn:link {
+.btn:active {
   background: white;
   border: none;
   color: #c6a8ce;
   transition: ease-in-out;
+  box-shadow: none;
 }
 
 .btn:hover {
