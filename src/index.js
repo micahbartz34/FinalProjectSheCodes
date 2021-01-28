@@ -33,17 +33,30 @@ function displayWeatherCondition(response) {
   );
   document.querySelector("#description").innerHTML =
     response.data.weather[0].main;
-  iconElement.setAttribute(
-    "src",
-    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
-  );
-  iconElement.setAttribute("alt", response.data.weather[0].description);
+}
+
+function displayForecast(response) {
+  let forecastElement = document.querySelector("#forecast");
+  let forecast = response.data.list[0];
+  console.log(forecast);
+  forecastElement.innerHTML = `          
+    <div>
+        <img src="http://openweathermap.org/img/wn/${
+          forecast.weather[0].icon
+        }@2x.png"/> &nbsp; 
+        <span class="day">${forecast.dt}</span>&emsp;
+        <span class="weather-forecast-temperature">${Math.round(
+          forecast.main.temp_max
+        )}° &thinsp; / &thinsp; ${Math.round(forecast.main.temp_min)}°</span>
+    </div>`;
 }
 
 function searchCity(city) {
   let apiKey = "9a5fdd10abe23028c2ed497d39ba1e8f";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
   axios.get(apiUrl).then(displayWeatherCondition);
+  apiURL = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=imperial`;
+  axios.get(apiURL).then(displayForecast);
 }
 
 function handleSubmit(event) {
@@ -55,12 +68,6 @@ function handleSubmit(event) {
 function getCurrentLocation(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(searchLocation);
-}
-
-function searchLocation(position) {
-  let apiKey = "9a5fdd10abe23028c2ed497d39ba1e8f";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=imperial`;
-  axios.get(apiUrl).then(displayWeatherCondition);
 }
 
 let dateElement = document.querySelector("#date");
