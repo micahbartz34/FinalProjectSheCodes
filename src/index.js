@@ -55,8 +55,8 @@ function displayForecast(response) {
         }@2x.png"/> &nbsp; 
         <span class="day">${formatDate(forecast.dt * 1000)}</span>&emsp;
         <span class="weather-forecast-temperature">${Math.round(
-          forecast.main.temp_max
-        )}° &thinsp; / &thinsp; ${Math.round(forecast.main.temp_min)}°</span>
+          forecast.main.temp
+        )}° </span>
     </div>`;
   }
 }
